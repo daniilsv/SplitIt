@@ -1,16 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        DVS_sign {
-            keyAlias 'DVSkey'
-            keyPassword '152463'
-            storeFile file('D:/PROJECTS/ANDROID/DVSAPKKEY.jks')
-            storePassword '152463'
-        }
-    }
     compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    buildToolsVersion "25.0.3"
     defaultConfig {
         applicationId "ru.daniils.splitit"
         minSdkVersion 17
@@ -25,8 +17,8 @@ android {
         }
     }
     packagingOptions {
-        exclude 'META-INF/NOTICE' // It is not include NOTICE file
-        exclude 'META-INF/LICENSE' // It is not include LICENSE file
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
     }
 }
 
