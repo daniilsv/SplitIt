@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SplitIt</string>
+
+    <string name="public_rooms">Public</string>
+    <string name="private_room">Private</string>
+    <string name="protected_room">Self</string>
+</resources>
