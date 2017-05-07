@@ -68,7 +68,7 @@ public class ItemActivity extends AppCompatActivity {
 
         donateView = new EditText(this);
         donateView.setInputType(InputType.TYPE_CLASS_NUMBER);
-        if (!room.isPublic.equals("OK"))
+        if (!room.isPublic.equals("ON"))
             for (int i = 0; i < new Random().nextInt(50) + 7; i++) {
                 View view = LayoutInflater.from(this).inflate(R.layout.row_people, null, false);
                 ((TextView) view.findViewById(R.id.name)).setText(i + " qq");

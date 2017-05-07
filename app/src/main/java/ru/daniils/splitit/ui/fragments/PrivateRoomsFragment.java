@@ -76,7 +76,7 @@ public class PrivateRoomsFragment extends Fragment {
 
     private void fillItems(final boolean isFromQuery) {
         Model model = new Room(context);
-        model.filter("is_public!='OK'");
+        model.filter("is_public!='ON'");
         items = model.getItems();
         if (items.size() != 0) {
             mAdapter.setItems(items);

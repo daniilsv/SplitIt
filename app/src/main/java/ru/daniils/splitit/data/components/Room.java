@@ -44,8 +44,7 @@ public class Room extends Model {
 
     @Override
     public HashMap getHashMap() {
-        HashMap<String, Object> ret = new ObjectMapper().convertValue(new Data(this), HashMap.class);
-        return ret;
+        return new ObjectMapper().convertValue(new Data(this), HashMap.class);
     }
 
     @Override
@@ -98,7 +97,7 @@ public class Room extends Model {
             setItemVar("description", description);
             setItemVar("price", price);
             setItemVar("deposit", deposit);
-            setItemVar("isPublic", is_public == 1 ? "OK" : "zzz");
+            setItemVar("isPublic", is_public == 1 ? "ON" : "OFF");
             item = mItem;
         }
 
