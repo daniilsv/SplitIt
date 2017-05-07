@@ -27,8 +27,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_margin="7dp"
                 app:progressBarThickness="6dp"
-                app:progressbarColor="#fff"
-                app:srcCompat="@drawable/prog" />
+                app:progressbarColor="#fff" />
 
             <TextView
                 android:id="@+id/progress_percent"

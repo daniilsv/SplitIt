@@ -3,6 +3,7 @@ package ru.daniils.splitit.utils;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.widget.Toast;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -46,5 +47,9 @@ public class Utils {
             ex.printStackTrace();
         }
         return "NULL";
+    }
+
+    public static void toast(Context context, Object o) {
+        Toast.makeText(context, o.toString(), Toast.LENGTH_LONG).show();
     }
 }
