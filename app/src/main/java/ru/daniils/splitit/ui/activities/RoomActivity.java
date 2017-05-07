@@ -27,7 +27,7 @@ import ru.daniils.splitit.data.components.Room;
 import ru.daniils.splitit.data.network.PostQuery;
 import ru.daniils.splitit.ui.views.CircleProgressBar;
 
-public class ItemActivity extends AppCompatActivity {
+public class RoomActivity extends AppCompatActivity {
     int room_id = -1;
     Room room = null;
     @BindView(R.id.title)

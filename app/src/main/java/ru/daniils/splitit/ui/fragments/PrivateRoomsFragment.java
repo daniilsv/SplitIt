@@ -20,7 +20,7 @@ import ru.daniils.splitit.R;
 import ru.daniils.splitit.data.components.Model;
 import ru.daniils.splitit.data.components.Room;
 import ru.daniils.splitit.ui.activities.AddRoomActivity;
-import ru.daniils.splitit.ui.activities.ItemActivity;
+import ru.daniils.splitit.ui.activities.RoomActivity;
 import ru.daniils.splitit.ui.adapters.RoomsAdapter;
 import ru.daniils.splitit.utils.Callback;
 
@@ -32,16 +32,17 @@ public class PrivateRoomsFragment extends Fragment {
     @BindView(R.id.swipe_refresh_layout)
     SwipeRefreshLayout swipeRefreshLayout;
     private RoomsAdapter mAdapter;
-    private ArrayList<Model> items = new ArrayList<>();
+
     private AdapterView.OnItemClickListener onClickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             Room item = mAdapter.getItem(position);
-            Intent intent = new Intent(getActivity(), ItemActivity.class);
+            Intent intent = new Intent(getActivity(), RoomActivity.class);
             intent.putExtra("room_id", item.localId);
             startActivity(intent);
         }
     };
+
     private SwipeRefreshLayout.OnRefreshListener onRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
         @Override
         public void onRefresh() {
@@ -77,7 +78,7 @@ public class PrivateRoomsFragment extends Fragment {
     private void fillItems(final boolean isFromQuery) {
         Model model = new Room(context);
         model.filter("is_public!='ON'");
-        items = model.getItems();
+        ArrayList<Model> items = model.getItems();
         if (items.size() != 0) {
             mAdapter.setItems(items);
             listRoomsView.setAdapter(mAdapter);
