@@ -15,6 +15,7 @@ import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ru.daniils.splitit.R;
+import ru.daniils.splitit.ui.fragments.MyAccountFragment;
 import ru.daniils.splitit.ui.fragments.PrivateRoomsFragment;
 import ru.daniils.splitit.ui.fragments.PublicRoomsFragment;
 
@@ -65,9 +66,9 @@ public class MainActivity extends AppCompatActivity {
 
         SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
+            arr.add(new MyAccountFragment());
             arr.add(new PublicRoomsFragment());
             arr.add(new PrivateRoomsFragment());
-            //arr.add(new ProtectedRoomsFragment());
         }
 
         @Override
@@ -84,11 +85,12 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return s_public_room;
+                    return s_protected_room;
                 case 1:
+                    return s_public_room;
+                case 2:
                     return s_private_room;
-                //case 2:
-                //    return s_protected_room;
+
             }
             return null;
         }
